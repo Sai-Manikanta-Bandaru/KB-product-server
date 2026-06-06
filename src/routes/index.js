@@ -3,10 +3,12 @@ const router = express.Router();
 const health = require('../controllers/healthController');
 const clients = require('./clients');
 const screens = require('./screens');
+const contents = require('./contents');
 
 router.get('/health', health.getHealth);
 
 router.use('/clients', clients);
 router.use('/screens', screens);
+router.use('/contents', contents);
 
 module.exports = router;

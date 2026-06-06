@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const screenCtrl = require('../controllers/screenController');
+const contentCtrl = require('../controllers/contentController');
 
 // Create screen (clientId in body)
 router.post('/', screenCtrl.createScreen);
@@ -10,6 +11,9 @@ router.get('/', screenCtrl.getScreens);
 
 // Get screen details
 router.get('/:id', screenCtrl.getScreenById);
+
+// Get contents for a screen
+router.get('/:id/contents', contentCtrl.getContentsByScreen);
 
 // Update screen
 router.put('/:id', screenCtrl.updateScreen);

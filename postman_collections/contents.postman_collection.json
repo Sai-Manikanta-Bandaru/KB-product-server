@@ -1,0 +1,135 @@
+{
+  "info": {
+    "name": "DOOH MVP - Contents",
+    "_postman_id": "contents-collection-0001",
+    "description": "Collection to test Content API endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Upload Content",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "screenId",
+              "value": "<screenId>",
+              "type": "text"
+            },
+            {
+              "key": "media",
+              "type": "file",
+              "src": ""
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{base_url}}/contents",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "contents"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Contents",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/contents",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "contents"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Content By Id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/contents/{{contentId}}",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "contents",
+            "{{contentId}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Activate Content",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"isActive\": true\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/contents/{{contentId}}/activate",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "contents",
+            "{{contentId}}",
+            "activate"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delete Content (soft)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/contents/{{contentId}}",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "contents",
+            "{{contentId}}"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:9000",
+      "type": "string"
+    },
+    {
+      "key": "screenId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "contentId",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}
