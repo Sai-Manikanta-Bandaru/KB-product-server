@@ -1,0 +1,47 @@
+{
+  "info": {
+    "name": "DOOH MVP - Player",
+    "_postman_id": "player-collection-0001",
+    "description": "Collection to test Player API endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Player Content",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/player?clientSlug={{clientSlug}}&screenSlug={{screenSlug}}",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "player"
+          ],
+          "query": [
+            { "key": "clientSlug", "value": "{{clientSlug}}" },
+            { "key": "screenSlug", "value": "{{screenSlug}}" }
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:9000",
+      "type": "string"
+    },
+    {
+      "key": "clientSlug",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "screenSlug",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}
