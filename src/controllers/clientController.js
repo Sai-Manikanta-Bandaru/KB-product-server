@@ -1,4 +1,4 @@
-const Client = require('../models/client');
+const Client = require('../models/Client');
 
 // Helper: consistent success response
 function success(res, message, data) {

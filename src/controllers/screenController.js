@@ -1,5 +1,5 @@
-const Screen = require('../models/screen');
-const Client = require('../models/client');
+const Screen = require('../models/Screen');
+const Client = require('../models/Client');
 
 function success(res, message, data) {
   return res.json({ success: true, message, data });
