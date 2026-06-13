@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 const screenCtrl = require('../controllers/screenController');
 const contentCtrl = require('../controllers/contentController');
+const auth = require('../middleware/auth');
+
+// Protect all screen routes
+router.use(auth);
 
 // Create screen (clientId in body)
 router.post('/', screenCtrl.createScreen);

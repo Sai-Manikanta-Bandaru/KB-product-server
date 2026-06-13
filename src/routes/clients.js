@@ -1,6 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const clientCtrl = require('../controllers/clientController');
+const auth = require('../middleware/auth');
+
+// Protect all client routes
+router.use(auth);
 
 // Create client
 router.post('/', clientCtrl.createClient);

@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 const contentCtrl = require('../controllers/contentController');
 const upload = require('../utils/contentUpload');
+const auth = require('../middleware/auth');
+
+// Protect all content routes
+router.use(auth);
 
 // Upload content (multipart/form-data): field 'screenId' and file field 'media'
 router.post('/', upload.single('media'), contentCtrl.uploadContent);
